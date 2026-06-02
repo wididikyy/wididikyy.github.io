@@ -7,7 +7,6 @@ export function AboutSection() {
         <div className="sm:mx-0">
           <Image
             src="/bg.webp"
-            loading="eager"
             preload
             sizes="100vw"
             className="w-full shadow-sm rounded-lg object-cover max-h-[50vh] min-h-75 hover:shadow-md transition-shadow duration-200"
