@@ -74,7 +74,7 @@ const CAREER: CareerEntry[] = [
     type: "work",
     status: "current",
     title: "WordPress Developer",
-    organization: "Jupitr Agency",
+    organization: "Jupitr Agency · Bali",
     period: "Aug 2025 – Present",
     description:
       "Building and maintaining WordPress-based web solutions for clients at Jupitr Agency.",
