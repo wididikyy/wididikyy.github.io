@@ -53,15 +53,6 @@ const CAREER: CareerEntry[] = [
       "Achieved first place in the Mobile Programming category at the Indoneris National IT Competition.",
   },
   {
-    type: "education",
-    status: "completed",
-    title: "S1 Informatics Engineering",
-    organization: "STIKOM PGRI Banyuwangi · Banyuwangi, East Java",
-    period: "Graduated Sep 2024",
-    description:
-      "Bachelor's degree in Informatics Engineering with a focus on software development and mobile applications.",
-  },
-  {
     type: "work",
     status: "completed",
     title: "Fullstack Developer",
