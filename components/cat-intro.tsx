@@ -6,10 +6,11 @@ import Image from "next/image";
 
 export function CatIntro() {
   const [visible, setVisible] = useState(true);
+  const [audioBlocked, setAudioBlocked] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
 
   useEffect(() => {
-    audioRef.current?.play().catch(() => {});
+    audioRef.current?.play().catch(() => setAudioBlocked(true));
     const timer = setTimeout(dismiss, 8000);
     return () => clearTimeout(timer);
   }, []);
@@ -20,6 +21,12 @@ export function CatIntro() {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
     }
+  }
+
+  function unmute(e: React.MouseEvent) {
+    e.stopPropagation();
+    audioRef.current?.play().catch(() => {});
+    setAudioBlocked(false);
   }
 
   return (
@@ -53,9 +60,19 @@ export function CatIntro() {
                 style={{ height: "auto", width: "auto" }}
                 className="rounded-2xl"
               />
-              <p className="text-white text-sm opacity-60 select-none">
-                Tap anywhere to skip
-              </p>
+              {audioBlocked ? (
+                <button
+                  onClick={unmute}
+                  className="text-white text-2xl select-none"
+                  aria-label="Unmute"
+                >
+                  🔇 tap untuk nyalain suara
+                </button>
+              ) : (
+                <p className="text-white text-sm opacity-60 select-none">
+                  Tap anywhere to skip
+                </p>
+              )}
             </motion.div>
           </motion.div>
         )}
