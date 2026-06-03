@@ -13,7 +13,7 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://wididikyy-github-io.vercel.app";
+const SITE_URL = "https://wididikyy-jupitragency.vercel.app";
 const DESCRIPTION =
   "Front-End and Mobile Developer with 3+ years of experience building responsive web and mobile applications. Skilled in React.js, Next.js, Laravel, and Flutter.";
 
