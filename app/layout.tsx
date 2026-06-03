@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { CatIntro } from "@/components/cat-intro";
 
 const manrope = Manrope({
   variable: "--font-heading",
@@ -105,6 +106,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <CatIntro />
           {children}
         </ThemeProvider>
       </body>
