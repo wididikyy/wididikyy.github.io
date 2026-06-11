@@ -16,12 +16,17 @@ export type Portfolio = {
 
 const container = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.15 } },
+  visible: { transition: { staggerChildren: 0.12 } },
 };
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
+  hidden: { opacity: 0, y: 24, scale: 0.97 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] as const },
+  },
 };
 
 export function PortfolioGrid({ items }: { items: Portfolio[] }) {
@@ -31,34 +36,44 @@ export function PortfolioGrid({ items }: { items: Portfolio[] }) {
       variants={container}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15 }}
+      viewport={{ once: true, amount: 0.1 }}
     >
       {items.map((item) => (
-        <motion.div key={item.title} variants={cardVariants}>
-          <Card className="flex flex-col overflow-hidden hover:shadow-md transition-shadow duration-200 p-0 h-full">
-            <div className="relative w-full h-64">
+        <motion.div
+          key={item.title}
+          variants={cardVariants}
+          whileHover={{ y: -6, transition: { duration: 0.2 } }}
+        >
+          <Card className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow duration-300 p-0 h-full">
+            <div className="relative w-full h-64 overflow-hidden">
               <Image
                 src={item.image}
                 alt={item.title}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover"
+                className="object-cover transition-transform duration-500 hover:scale-105"
               />
             </div>
             <CardContent className="flex flex-col gap-3 p-5 flex-1">
               <h4 className="text-xl font-semibold leading-tight">{item.title}</h4>
-              <p className="text-sm text-muted-foreground leading-relaxed flex-1">{item.description}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed flex-1">
+                {item.description}
+              </p>
             </CardContent>
             {(item.github || item.site) && (
               <CardFooter className="flex gap-2 px-5 pb-5">
                 {item.github && (
                   <Button asChild variant="outline" size="sm">
-                    <Link href={item.github} target="_blank" rel="noopener noreferrer">GitHub</Link>
+                    <Link href={item.github} target="_blank" rel="noopener noreferrer">
+                      GitHub
+                    </Link>
                   </Button>
                 )}
                 {item.site && (
                   <Button asChild size="sm">
-                    <Link href={item.site} target="_blank" rel="noopener noreferrer">Visit Site</Link>
+                    <Link href={item.site} target="_blank" rel="noopener noreferrer">
+                      Visit Site
+                    </Link>
                   </Button>
                 )}
               </CardFooter>

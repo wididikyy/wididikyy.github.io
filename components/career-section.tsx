@@ -1,3 +1,6 @@
+"use client";
+
+import { motion } from "framer-motion";
 import {
   TimelineSteps,
   TimelineStepsConnector,
@@ -64,11 +67,11 @@ const CAREER: CareerEntry[] = [
   {
     type: "work",
     status: "current",
-    title: "WordPress Developer",
+    title: "Backend WordPress Developer",
     organization: "Jupitr Agency · Bali",
     period: "Aug 2025 – Present",
     description:
-      "Building and maintaining WordPress-based web solutions for clients at Jupitr Agency.",
+      "Building custom WordPress solutions including ACF post types, custom code via WPCode, and developing custom plugins tailored to client needs.",
   },
 ];
 
@@ -78,38 +81,60 @@ const CAREER_ICON = {
   achievement: RiTrophyLine,
 } as const;
 
+const itemVariants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0 },
+};
+
 export function CareerSection() {
   return (
     <section className="mb-20 md:mb-28">
       <div className="md:grid md:grid-cols-2 md:gap-x-16 items-start">
-        <h3 className="mb-8 md:mb-0 text-4xl lg:text-6xl leading-tight">Career Journey</h3>
-        <TimelineSteps>
-          {CAREER.map((entry, index) => {
-            const Icon = CAREER_ICON[entry.type];
-            const isLast = index === CAREER.length - 1;
-            return (
-              <TimelineStepsItem key={entry.title} status={entry.status}>
-                {!isLast && <TimelineStepsConnector status={entry.status} />}
-                <TimelineStepsHeader>
-                  <TimelineStepsIcon
-                    size="default"
-                    variant={entry.status === "current" ? "primary" : "outline"}
-                  >
-                    <Icon />
-                  </TimelineStepsIcon>
-                  <TimelineStepsTitle>{entry.title}</TimelineStepsTitle>
-                </TimelineStepsHeader>
-                <TimelineStepsContent>
-                  <TimelineStepsTime>{entry.period}</TimelineStepsTime>
-                  <TimelineStepsDescription className="font-medium text-foreground/70">
-                    {entry.organization}
-                  </TimelineStepsDescription>
-                  <TimelineStepsDescription>{entry.description}</TimelineStepsDescription>
-                </TimelineStepsContent>
-              </TimelineStepsItem>
-            );
-          })}
-        </TimelineSteps>
+        <h3 className="mb-8 md:mb-0 text-4xl lg:text-6xl leading-tight">
+          Career Journey
+        </h3>
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ staggerChildren: 0.12 }}
+        >
+          <TimelineSteps>
+            {CAREER.map((entry, index) => {
+              const Icon = CAREER_ICON[entry.type];
+              const isLast = index === CAREER.length - 1;
+              return (
+                <motion.div
+                  key={entry.title}
+                  variants={itemVariants}
+                  transition={{ duration: 0.45, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                  <TimelineStepsItem status={entry.status}>
+                    {!isLast && <TimelineStepsConnector status={entry.status} />}
+                    <TimelineStepsHeader>
+                      <TimelineStepsIcon
+                        size="default"
+                        variant={entry.status === "current" ? "primary" : "outline"}
+                      >
+                        <Icon />
+                      </TimelineStepsIcon>
+                      <TimelineStepsTitle>{entry.title}</TimelineStepsTitle>
+                    </TimelineStepsHeader>
+                    <TimelineStepsContent>
+                      <TimelineStepsTime>{entry.period}</TimelineStepsTime>
+                      <TimelineStepsDescription className="font-medium text-foreground/70">
+                        {entry.organization}
+                      </TimelineStepsDescription>
+                      <TimelineStepsDescription>
+                        {entry.description}
+                      </TimelineStepsDescription>
+                    </TimelineStepsContent>
+                  </TimelineStepsItem>
+                </motion.div>
+              );
+            })}
+          </TimelineSteps>
+        </motion.div>
       </div>
     </section>
   );

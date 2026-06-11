@@ -3,6 +3,7 @@ import { CareerSection } from "@/components/career-section";
 import { HeroSection } from "@/components/hero-section";
 import { PortfolioSection } from "@/components/portfolio-section";
 import { SectionAnimate } from "@/components/section-animate";
+import { TechStackSection } from "@/components/tech-stack-section";
 
 export default function Home() {
   return (
@@ -15,6 +16,9 @@ export default function Home() {
       </SectionAnimate>
       <SectionAnimate delay={0.1}>
         <CareerSection />
+      </SectionAnimate>
+      <SectionAnimate delay={0.1}>
+        <TechStackSection />
       </SectionAnimate>
       <SectionAnimate delay={0.1}>
         <PortfolioSection />

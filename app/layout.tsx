@@ -2,16 +2,19 @@ import type { Metadata } from "next";
 import { Manrope, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Footer } from "@/components/footer";
 // import { CatIntro } from "@/components/cat-intro";
 
 const manrope = Manrope({
   variable: "--font-heading",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const dmSans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const SITE_URL = "https://wididikyy-jupitragency.vercel.app";
@@ -108,6 +111,7 @@ export default function RootLayout({
         >
           {/* <CatIntro /> */}
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
