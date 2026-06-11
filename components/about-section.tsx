@@ -58,12 +58,13 @@ export function AboutSection() {
             <span className="font-semibold text-lg">Widi Diky</span>
           </div>
           <p className="text-lg leading-relaxed">
-            Front-End and Mobile Developer with 3+ years of experience building
-            responsive, interactive, and scalable web and mobile applications.
-            Skilled in React.js, Next.js, Laravel, Flutter, and REST API
-            integration. Experienced in Agile development, team collaboration,
-            and project delivery across HRMS systems, IPTV applications, company
-            profile websites, and university data platforms.
+            Full-Stack and Mobile Developer with 3+ years of experience across
+            frontend, mobile, and backend development. Built responsive web apps
+            with React.js and Next.js, cross-platform mobile apps with Flutter,
+            and backend systems with Laravel. Currently at Jupitr Agency as a
+            Backend WordPress Developer — building custom plugins, ACF post
+            types, and WPCode solutions for clients. National 1st-place winner
+            in Mobile Programming at the 2023 Indoneris IT Competition.
           </p>
         </motion.div>
       </div>
