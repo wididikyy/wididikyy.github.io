@@ -8,28 +8,8 @@ const inView = { once: true, amount: 0.15 };
 
 export function AboutSection() {
   return (
-    <section>
-      <motion.div
-        className="mb-8 md:mb-16"
-        initial={{ opacity: 0, scale: 1.03 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        viewport={inView}
-        transition={{ duration: 0.7, ease }}
-      >
-        <div className="sm:mx-0">
-          <Image
-            src="/bg.webp"
-            priority
-            sizes="100vw"
-            className="w-full shadow-sm rounded-lg object-cover max-h-[50vh] min-h-75 hover:shadow-md transition-shadow duration-200"
-            width={1200}
-            height={600}
-            alt="Visually striking abstract composition, characterized by swirling teal and black hues that evoke a sense of dynamic movement. The dominant teal color is accentuated by subtle white highlights, adding depth and dimensionality to the overall design"
-          />
-        </div>
-      </motion.div>
-
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 mb-20 md:mb-28 items-start">
+    <section className="mb-16 md:mb-20">
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 p-8 md:p-12 items-start">
         <motion.h3
           className="mb-6 md:mb-0 text-4xl lg:text-6xl leading-tight"
           initial={{ opacity: 0, x: -20 }}

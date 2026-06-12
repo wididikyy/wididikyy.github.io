@@ -26,9 +26,11 @@ const PORTFOLIOS: Portfolio[] = [
 
 export function PortfolioSection() {
   return (
-    <section className="mb-20 md:mb-28">
-      <h3 className="mb-8 text-4xl lg:text-6xl leading-tight">Portfolio Showcase</h3>
-      <PortfolioGrid items={PORTFOLIOS} />
+    <section className="mb-16 md:mb-20">
+      <div className="p-8 md:p-12">
+        <h3 className="mb-8 text-4xl lg:text-6xl leading-tight">Portfolio Showcase</h3>
+        <PortfolioGrid items={PORTFOLIOS} />
+      </div>
     </section>
   );
 }

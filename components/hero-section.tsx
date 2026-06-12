@@ -1,36 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ToggleMode } from "@/components/toggle-mode";
 import Link from "next/link";
+import Image from "next/image";
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 export function HeroSection() {
   return (
-    <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <motion.h1
-        className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8"
-        initial={{ opacity: 0, x: -32 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease }}
-      >
-        Widi Diky.
-      </motion.h1>
-      <motion.div
-        className="flex md:flex-col items-center justify-center flex-col-reverse md:items-end md:justify-end gap-4 mt-5"
-        initial={{ opacity: 0, x: 32 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.6, ease, delay: 0.15 }}
-      >
-        <ToggleMode />
-        <h2 className="text-center md:text-left text-lg">
+    <section className="relative flex items-end mt-16 mb-16 md:mb-12 rounded-lg overflow-hidden min-h-[50vh] md:min-h-[60vh]">
+      <Image
+        src="/bg.webp"
+        alt="Hero background"
+        fill
+        priority
+        sizes="100vw"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-linear-to-t from-background via-background/50 to-transparent" />
+
+      <div className="relative z-10 p-8 md:p-12">
+        <motion.h1
+          className="text-4xl md:text-6xl tracking-tighter leading-tight"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease }}
+        >
+          Full-Stack & Mobile Developer.
+        </motion.h1>
+        <motion.h2
+          className="mt-3 text-lg text-muted-foreground"
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease, delay: 0.15 }}
+        >
           Check out my{" "}
           <Link
             href="https://github.com/wididikyy"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-primary hover:dark:text-chart-2 duration-200 transition-colors"
+            className="underline hover:text-foreground hover:dark:text-chart-2 duration-200 transition-colors"
           >
             GitHub
           </Link>{" "}
@@ -39,13 +48,13 @@ export function HeroSection() {
             href="https://www.linkedin.com/in/wididiky/"
             target="_blank"
             rel="noopener noreferrer"
-            className="underline hover:text-primary hover:dark:text-chart-2 duration-200 transition-colors"
+            className="underline hover:text-foreground hover:dark:text-chart-2 duration-200 transition-colors"
           >
             LinkedIn
           </Link>
           .
-        </h2>
-      </motion.div>
+        </motion.h2>
+      </div>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { Manrope, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
 // import { CatIntro } from "@/components/cat-intro";
 
 const manrope = Manrope({
@@ -110,6 +111,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           {/* <CatIntro /> */}
+          <Navbar />
           {children}
           <Footer />
         </ThemeProvider>

@@ -67,8 +67,8 @@ export function TechStackSection() {
   }, []);
 
   return (
-    <section className="mb-20 md:mb-28">
-      <div className="md:grid md:grid-cols-2 md:gap-x-16 items-center">
+    <section className="mb-16 md:mb-20">
+      <div className="md:grid md:grid-cols-2 md:gap-x-16 items-center p-8 md:p-12">
         <h3 className="mb-8 md:mb-0 text-4xl lg:text-6xl leading-tight">
           Tech Stack
         </h3>
