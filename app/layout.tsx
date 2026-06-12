@@ -18,7 +18,7 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const SITE_URL = "https://wididikyy-jupitragency.vercel.app";
+const SITE_URL = "https://widi.jupitragency.com/";
 const DESCRIPTION =
   "Full-Stack and Mobile Developer with 3+ years of experience building responsive web and mobile applications. Skilled in React.js, Next.js, Laravel, and Flutter.";
 
@@ -96,8 +96,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Widi Diky",
-  url: "https://wididikyy-jupitragency.vercel.app",
-  image: "https://wididikyy-jupitragency.vercel.app/bg.webp",
+  url: "https://widi.jupitragency.com/",
+  image: "https://widi.jupitragency.com/bg.webp",
   jobTitle: ["Full-Stack Developer", "Mobile Developer"],
   description:
     "Full-Stack and Mobile Developer with 3+ years of experience building responsive web and mobile applications. Skilled in React.js, Next.js, Laravel, and Flutter.",
