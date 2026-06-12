@@ -46,7 +46,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setIsOpen((prev) => !prev)}
-            className="size-9 flex items-center justify-center rounded-full border border-foreground hover:bg-accent transition-colors duration-200"
+            className="size-9 flex items-center justify-center rounded-full hover:bg-accent transition-colors duration-200"
             aria-label="Toggle menu"
             aria-expanded={isOpen}
           >
